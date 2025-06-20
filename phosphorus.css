@@ -260,8 +260,8 @@
   overflow: hidden;
 }
 .player-controls .player-button {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   float: right;
   cursor: pointer;
   text-align: center;
