@@ -260,12 +260,13 @@
   overflow: hidden;
 }
 .player-controls .player-button {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   float: right;
   cursor: pointer;
   text-align: center;
   opacity: 0.4;
+  margin: 0 4px;
   background-image: url(icons.svg);
   text-decoration: none;
 }
@@ -297,16 +298,22 @@
   background-position-x: -160px;
 }
 .player-controls .player-flag {
-  background-position: 0px -0px;
+  background-image: url(play.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-controls .player-stop {
-  background-position: -96px -0px;
+  background-image: url(stop.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-controls .player-pause {
-  background-position: -32px -0px;
+  background-image: url(pause.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-root:not([running]) .player-controls .player-pause {
-  background-position-x: -64px;
+  background-image: url(Paused.svg);
 }
 .player-controls .player-turbo {
   display: none;
@@ -392,7 +399,7 @@
 .player-click-to-play-icon {
   width: 10em;
   height: 10em;
-  background-image: url(icons/click-to-play.svg);
+  background-image: url(icons/Go.svg);
   background-size: 100% 100%;
 }
 
