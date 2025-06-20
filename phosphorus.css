@@ -297,16 +297,22 @@
   background-position-x: -160px;
 }
 .player-controls .player-flag {
-  background-position: 0px -0px;
+  background-image: url(play.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-controls .player-stop {
-  background-position: -96px -0px;
+  background-image: url(stop.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-controls .player-pause {
-  background-position: -32px -0px;
+  background-image: url(pause.svg);
+  background-size: contain;
+  background-position: center;
 }
 .player-root:not([running]) .player-controls .player-pause {
-  background-position-x: -64px;
+  background-image: url(play.svg);
 }
 .player-controls .player-turbo {
   display: none;
