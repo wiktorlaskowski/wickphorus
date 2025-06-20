@@ -100,6 +100,16 @@ input[disabled] {
   background-position-y: -32px;
 }
 
+.load-error {
+  display: none;
+  color: rgb(128, 0, 0);
+  font: 500 12px sans-serif;
+  margin-top: 4px;
+}
+.dark .load-error {
+  color: rgb(255, 91, 91);
+}
+
 .area {
   overflow: hidden;
   margin: 0 -1px;
