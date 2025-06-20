@@ -47,6 +47,7 @@
     <div class="title">
       <input class="url" value="https://scratch.mit.edu/projects/" spellcheck="false">
       <a target="_blank" class="project-link" title="View project on Scratch" rel="noopener" href="https://scratch.mit.edu/"></a>
+      <div id="load-error" class="load-error"></div>
     </div>
 
     <div class="area" id="unshared-projects">
@@ -243,11 +244,27 @@
 
     var player = new P.player.Player();
     player.addControls();
+    var progressContainer = querySelector('.url').parentNode;
     new P.player.ProgressBar(player, {
-      position: querySelector('.url').parentNode,
+      position: progressContainer,
     });
+    var loadError = querySelector('#load-error');
     var errorHandler = new P.player.ErrorHandler(player);
+    player.onstartload.subscribe(function() {
+      loadError.style.display = 'none';
+      loadError.textContent = '';
+    });
+    player.onload.subscribe(function() {
+      loadError.style.display = 'none';
+      loadError.textContent = '';
+    });
+    player.oncleanup.subscribe(function() {
+      loadError.style.display = 'none';
+      loadError.textContent = '';
+    });
     player.onerror.subscribe(function(err) {
+      loadError.textContent = err && err.message ? err.message : String(err);
+      loadError.style.display = 'block';
       if (err instanceof P.player.PlayerError) {
         // Handled by the player's ErrorHandler.
         return;
