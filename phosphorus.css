@@ -263,6 +263,7 @@
   width: 32px;
   height: 32px;
   float: right;
+  margin: 0 4px;
   cursor: pointer;
   text-align: center;
   opacity: 0.4;
@@ -311,7 +312,10 @@
   background-size: contain;
   background-position: center;
 }
-.player-root:not([running]) .player-controls .player-pause {
+.player-root[paused] .player-controls .player-pause {
+  background-image: url(Paused.svg);
+}
+.player-root:not([running]):not([paused]) .player-controls .player-pause {
   background-image: url(Go.svg);
 }
 .player-controls .player-turbo {

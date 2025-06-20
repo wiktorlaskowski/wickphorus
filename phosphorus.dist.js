@@ -3366,6 +3366,7 @@ var P;
                 }
                 this.stage.runtime.start();
                 this.enableAttribute('running');
+                this.disableAttribute('paused');
                 this.onresume.emit();
             }
             pause() {
@@ -3375,6 +3376,7 @@ var P;
                 }
                 this.stage.runtime.pause();
                 this.disableAttribute('running');
+                this.enableAttribute('paused');
                 this.onpause.emit();
             }
             isRunning() {
@@ -3396,6 +3398,7 @@ var P;
                 this.throwWithoutStage();
                 this.pause();
                 this.stage.runtime.stopAll();
+                this.disableAttribute('paused');
             }
             triggerGreenFlag() {
                 this.throwWithoutStage();
@@ -3409,6 +3412,8 @@ var P;
                 }
             }
             cleanup() {
+                this.disableAttribute('running');
+                this.disableAttribute('paused');
                 if (this.currentLoader) {
                     this.currentLoader.cancel();
                     this.currentLoader = null;

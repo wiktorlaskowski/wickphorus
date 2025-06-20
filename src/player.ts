@@ -639,6 +639,7 @@ namespace P.player {
       }
       this.stage.runtime.start();
       this.enableAttribute('running');
+      this.disableAttribute('paused');
       this.onresume.emit();
     }
 
@@ -649,6 +650,7 @@ namespace P.player {
       }
       this.stage.runtime.pause();
       this.disableAttribute('running');
+      this.enableAttribute('paused');
       this.onpause.emit();
     }
 
@@ -672,6 +674,7 @@ namespace P.player {
       this.throwWithoutStage();
       this.pause();
       this.stage.runtime.stopAll();
+      this.disableAttribute('paused');
     }
 
     triggerGreenFlag(): void {
@@ -687,6 +690,8 @@ namespace P.player {
     }
 
     cleanup() {
+      this.disableAttribute('running');
+      this.disableAttribute('paused');
       // Stop any loader
       if (this.currentLoader) {
         this.currentLoader.cancel();
