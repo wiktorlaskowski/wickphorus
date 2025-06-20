@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wickphorus editor</title>
+  <link rel="stylesheet" href="phosphorus.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+  <style>
+    #editor-container { display: flex; height: 100vh; }
+    #player { width: 480px; margin-right: 8px; }
+    #blocklyDiv { flex: 1; height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="editor-container">
+    <div id="player"></div>
+    <div id="blocklyDiv"></div>
+  </div>
+  <xml id="toolbox" style="display:none">
+    <block type="text"></block>
+  </xml>
+  <script src="lib/scratch-sb1-converter.js"></script>
+  <script src="lib/jszip.min.js"></script>
+  <script src="lib/fontfaceobserver.standalone.js"></script>
+  <script src="lib/canvg.min.js"></script>
+  <script src="lib/purify.min.js"></script>
+  <script src="phosphorus.dist.js"></script>
+  <script src="common.js"></script>
+  <script src="editor-page.js"></script>
+</body>
+</html>

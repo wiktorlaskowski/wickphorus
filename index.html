@@ -45,9 +45,11 @@
 
     <div class="area" id="player-area"></div>
 
+
     <div class="title">
       <input class="url" value="https://scratch.mit.edu/projects/" spellcheck="false">
       <a target="_blank" class="project-link" title="View project on Scratch" rel="noopener" href="https://scratch.mit.edu/"></a>
+      <button id="see-inside" type="button">See inside</button>
       <div id="load-error" class="load-error"></div>
     </div>
 
@@ -175,6 +177,7 @@
   <script src="phosphorus.dist.js"></script>
   <script src="common.js"></script>
   <script src="studioview/studioview.js"></script>
+  <script src="editor.js"></script>
 
   <script>
     P.i18n.addTranslations('en', {
