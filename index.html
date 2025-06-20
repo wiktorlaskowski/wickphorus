@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="phosphorus.css">
   <link rel="stylesheet" href="studioview/studioview.css">
   <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
 </head>
 
 <body>
@@ -45,9 +46,18 @@
 
     <div class="area" id="player-area"></div>
 
+    <div class="area" id="editor-area" style="display: none;">
+      <div id="blocklyDiv" style="height: 480px; width: 100%;"></div>
+      <xml id="toolbox" style="display: none">
+        <block type="controls_repeat_ext"></block>
+        <block type="logic_compare"></block>
+      </xml>
+    </div>
+
     <div class="title">
       <input class="url" value="https://scratch.mit.edu/projects/" spellcheck="false">
       <a target="_blank" class="project-link" title="View project on Scratch" rel="noopener" href="https://scratch.mit.edu/"></a>
+      <button id="see-inside" type="button">See inside</button>
       <div id="load-error" class="load-error"></div>
     </div>
 
@@ -175,6 +185,7 @@
   <script src="phosphorus.dist.js"></script>
   <script src="common.js"></script>
   <script src="studioview/studioview.js"></script>
+  <script src="editor.js"></script>
 
   <script>
     P.i18n.addTranslations('en', {
