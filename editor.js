@@ -2,6 +2,12 @@
   'use strict';
   var seeInside = document.getElementById('see-inside');
   if (!seeInside) return;
+  seeInside.addEventListener('click', function() {
+    var id = location.hash.replace(/^#/, '');
+    if (id) {
+      location.href = 'editor.html#' + id;
+    } else {
+      alert('Load a project first.');
   var playerArea = document.getElementById('player-area');
   var editorArea = document.getElementById('editor-area');
   var workspace;
